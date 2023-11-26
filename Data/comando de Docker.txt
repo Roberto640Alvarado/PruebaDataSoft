@@ -1,0 +1,1 @@
+docker run --name prueba-data -e POSTGRES_USER=datasoft -e POSTGRES_PASSWORD=datasoft -e POSTGRES_DB=datasoft -p 5432:5432 -d postgres

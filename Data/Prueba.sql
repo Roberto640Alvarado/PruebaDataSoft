@@ -45,9 +45,11 @@ ALTER TABLE token ADD CONSTRAINT token_fk FOREIGN KEY (user_code) REFERENCES use
 
 INSERT INTO generes (name) VALUES
     ('Ficción'),
-    ('No ficción'),
-    ('Misterio'),
-    ('Ciencia ficción');
+    ('Romantico'),
+    ('Drama'),
+    ('Suspenso');
+
+
    
    
    

@@ -53,6 +53,7 @@ const BookDetailsModal = ({ bookId, isOpen, onRequestClose }) => {
               <p className="text-gray-800 mb-4">Resumen: {book?.summary || ''}</p>
               <p className="text-gray-800 mb-4">Precio: ${book?.price || 0}</p>
               <p className="text-gray-800 mb-4">Estado: {book?.state ? 'Disponible' : 'No disponible'}</p>
+              <p className="text-gray-800 mb-4">Genero: {book?.generes.name}</p>  
 
               <button
                 onClick={handleGoBack}

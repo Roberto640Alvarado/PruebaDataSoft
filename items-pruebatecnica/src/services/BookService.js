@@ -32,7 +32,52 @@ const bookService = {
                 hasError: true,
             };
         }
-    }
+    },
+
+    getById: async (token, id) => {
+        try {
+            const response = await API.get(`viewBook?id=${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (response.status === 200) {
+                console.log(response.data);
+                return response.data;
+            } else {
+                throw new Error(response.status);
+            }
+        } catch (error) {
+            console.error(error);
+            return {
+                hasError: true,
+            };
+        }
+    },
+    updateBook: async (token, bookId, newData) => {
+        try {
+          const response = await API.put(`/update?id=${bookId}`,
+            newData,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
+    
+          if (response.status === 201) {
+            console.log("Libro actualizado:", response.data);
+            return response.data;
+          } else {
+            throw new Error(response.status);
+          }
+        } catch (error) {
+          console.error("Error al actualizar el libro:", error);
+          return {
+            hasError: true,
+          };
+        }
+      },
 }
 
 export default bookService;

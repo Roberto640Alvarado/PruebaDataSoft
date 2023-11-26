@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import ProtectedRoutes from "./ProtectedRoutes";
+import EditBook from "../pages/Books/EditBook";
 
 const AppRouter = () => {
     return (
@@ -12,6 +13,7 @@ const AppRouter = () => {
 
                 <Route element={<ProtectedRoutes />}>
                     <Route path="/Home" element={<Home />} />
+                    <Route path="/EditBook/:id" element={<EditBook />} />
                 </Route>
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>

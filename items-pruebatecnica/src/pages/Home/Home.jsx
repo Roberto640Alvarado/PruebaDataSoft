@@ -6,12 +6,14 @@ import context from "../../Context/UserContext";
 import CardHome from "../../components/Card/CardHome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../../index.css'
 
 const Home = () => {
   const [generes, setGeneres] = useState([]);
   const [selectedGenere, setSelectedGenere] = useState(null);
   const [books, setBooks] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,6 +45,14 @@ const Home = () => {
     setSearchTerm(text);
   };
 
+  const handleViewModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   const handleGenereClick = async (genereName) => {
     try {
       const token = context.getToken();
@@ -62,7 +72,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex">
+      <div className={`flex ${isModalOpen ? 'modal-open' : ''}`}>
         {/* Parte Izquierda */}
         <div className="w-1/4 p-4 bg-blue-200 flex flex-col bg-green-200">
           <h2 className="text-lg font-bold mb-4">Selecciona un Genero</h2>

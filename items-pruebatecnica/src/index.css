@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* index.css o App.css */
+
+body.modal-open {
+    overflow: hidden; /* Evita que la página principal se desplace cuando el modal está abierto */
+  }
+  
+  .overlay:before {
+    content: "";
+    background: inherit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(8px); /* Ajusta la cantidad de desenfoque según sea necesario */
+  }
+
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  

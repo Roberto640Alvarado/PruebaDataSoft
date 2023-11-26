@@ -58,10 +58,6 @@ const EditBook = () => {
 
       const updatedBook = await bookService.updateBook(token, id, newData);
 
-      // Manejar la respuesta del servidor (updatedBook)
-      console.log("Libro actualizado:", updatedBook);
-
-      // Redirigir a la página de inicio después de la actualización
       navigate('/Home');
     } catch (error) {
       // Manejar errores

@@ -1,0 +1,23 @@
+{
+    "id": 1,
+    "fullName": "Alberto Alvarado",
+    "username": "Alberto",
+    "password": "12345678"
+
+}
+
+{
+    "id": 2,
+    "fullName": "Roberto Carlos Alvarado",
+    "username": "Roberto",
+    "password": "12345678pass"
+
+}
+
+{
+    "id": 3,
+    "fullName": "Lorena Alvarado",
+    "username": "Lorena",
+    "password": "password"
+
+}
